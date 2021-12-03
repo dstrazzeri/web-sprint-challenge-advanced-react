@@ -6,6 +6,8 @@ import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
+// I know that the Output code is not necessary but I realized I really like writing tests so...
+
 test("renders without errors", () => {
     render(<CheckoutForm/>)
 });
@@ -33,18 +35,19 @@ test("shows success message on submit with form details", async () => {
 
     const successMessageOutput = await screen.findByTestId(/successMessage/i)
 
-    // const firstNameOutput = screen.getByLabelText(/First Name:/i)
-    // const lastNameOutput = screen.getByLabelText(/Last Name:/i)
-    // const addressOutput = screen.getByLabelText(/Address:/i)
-    // const cityOutput = screen.getByLabelText(/City:/i)
-    // const stateOutput = screen.getByLabelText(/State:/i)
-    // const zipOutput = screen.getByLabelText(/Zip:/i)
+    const firstNameOutput = screen.getByLabelText(/First Name:/i)
+    const lastNameOutput = screen.getByLabelText(/Last Name:/i)
+    const addressOutput = screen.getByLabelText(/Address:/i)
+    const cityOutput = screen.getByLabelText(/City:/i)
+    const stateOutput = screen.getByLabelText(/State:/i)
+    const zipOutput = screen.getByLabelText(/Zip:/i)
 
     expect(successMessageOutput).toBeInTheDocument()
-    // expect(firstNameOutput).toBeInTheDocument()
-    // expect(lastNameOutput).toBeInTheDocument()
-    // expect(addressOutput).toBeInTheDocument()
-    // expect(cityOutput).toBeInTheDocument()
-    // expect(stateOutput).toBeInTheDocument()
-    // expect(zipOutput).toBeInTheDocument()
+
+    expect(firstNameOutput).toBeInTheDocument()
+    expect(lastNameOutput).toBeInTheDocument()
+    expect(addressOutput).toBeInTheDocument()
+    expect(cityOutput).toBeInTheDocument()
+    expect(stateOutput).toBeInTheDocument()
+    expect(zipOutput).toBeInTheDocument()
 });
